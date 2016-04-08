@@ -1,0 +1,26 @@
+#####Examen###############
+#2 partes
+##1.-Generar un script
+##2.-Se entrega un script y nos dice en que linea explicar o hacer comentarios
+##Funcion de autocorrelación
+##La autocorrelación mide la correlación entre dos variables separados por k periodos
+##propiedades de la autocorrelación
+##P0=1
+##-1<=P0<=1
+##Simetria Pj=pj-1
+install.packages("fpp")
+require(fpp)
+Acf(beer)
+xx<- Acf(beer,main="ACF of quarterly beer production")
+Acf(beer,main="ACF of quarterly beer production")
+names(xx)
+xx$acf
+##si pasa la linea punteada si hay correlación y si los picos pasan la linea hay estacionalidad
+##si hay estacionalidad si el desfase temporal sera grande y positivo
+######netflix#######
+netflix<- read.csv("C:\\Users\\SALA-C14\\Downloads\\table.csv", header=TRUE)
+nfix<-ts(netflix[,5],start=2015,frequency = 12)
+plot.ts(nfix)
+Acf(nfix) ##para generar la tabla de autocorrelación
+xx<-Acf(nfix,main="ACF of quarterly beer production")
+xx$acf
